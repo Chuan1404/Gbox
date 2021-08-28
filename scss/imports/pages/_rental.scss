@@ -1,0 +1,226 @@
+#rental_page {
+    .rental {
+        .container {
+            display: flex;
+            padding-bottom: 60px;
+            border-bottom: 1px solid $text-cl;
+            .renboxes {
+                width: 260px;
+                max-height: 640px;
+                padding-top: 70px;
+                padding-left: 20px;
+                background-color: #525355;
+                &__item {
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                    .number-box {
+                       width: 118px;
+                       height: 118px;
+                       margin-right: 20px;
+                    }
+                    .text {
+                        color: #fff;
+                        h2 {
+                            font-family: Peb;
+                            font-size: 32px;
+                            margin: 25px 0;
+                        }
+                        p {
+                            &.stuname {
+                                font-size: 12px;
+                                text-transform: uppercase;
+                                margin-bottom: 15px;
+                            }
+                            font-family: Pr;
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+            .reninput {
+                width: 100%;
+                padding-top: 70px;
+                padding-left: 50px;
+               h2 {
+                   font-size: 28px;
+                   font-family: Db;
+                   color: #39382f;
+                   margin-bottom: 20px;
+               }
+               &__book  {
+                   margin-top: 30px;
+                   p {
+                    display: block;
+                    font-family: Pr;
+                    font-size: 12px;
+                    color: $text-cl;
+                   }
+                   .select-box {
+                       .items {
+                           display: flex;
+                           justify-content: space-between;
+                           max-width: var(--inputWidth);
+                           margin-top: 20px;
+                           .number-box {
+                               &.active {
+                                   background: $main-cl;
+                                   h2 {
+                                       color: $text-cl;
+                                   }
+                               }
+                               &:hover {
+                                background: $main-cl;
+                                transition: $t;
+                                h2 {
+                                    color: $text-cl;
+                                    transition: $t;
+                                }
+                               }
+                               cursor: pointer;
+                               width: 40px;
+                               height: 40px;
+                               background: #111111;
+                               transition: $t;
+                               h2 {
+                                   font-size: 24px;
+                                   margin-bottom: 0;
+                                   color: #b4b4b4;
+                                   transition: $t;
+                               }
+                           }
+                       }
+                   }
+                   &--item {
+                       .renform {
+                           &:last-child {
+                               .form-group {
+                                   input {
+                                       width: calc(100% + var(--inputWidth))
+                                   }
+                               }
+                           }
+                            .form-group {
+                                textarea {
+                                    margin-top: 0;
+                                    resize: none;
+                                }
+                                input {
+                                    border: 1px solid $text-cl;
+                                    height: 40px;
+                                }
+                                label {
+                                    &.note {
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                       }
+                   }
+               }
+               &__submit {
+                   display: flex;
+                   margin-top: 70px;
+                   p {
+                       max-width: 185px;
+                       font-family: Pr;
+                       font-size: 12px;
+                       margin-left: 20px;
+                       strong {
+                           font-weight: bold;
+                       }
+                   }
+               }
+            }
+        }
+        @media (max-width: 767px ) {
+            --inputWidth: 100%;
+            .container {
+                flex-direction: column;
+                .renboxes {
+                    background-color: transparent;
+                    padding-top: 30px;
+                    padding-left: 0;
+                    &__item {
+                        &.active {
+                            display: flex;
+                        }
+                        .number-box {
+                            width: 100px;
+                            height: 100px;
+                            h2 {
+                                font-size: 63.78px;
+                            }
+                        }
+                        .text {
+                            color : $text-cl;
+                            margin-left: 25px;
+                            h2 {
+                                margin-top: 0;
+                                margin-bottom: 10px;
+                            }
+                            p {
+                                &:last-child {
+                                    display: none;
+                                }
+                                &.stuname {
+                                    letter-spacing: 1px;
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .reninput {
+                    padding-top: 30px;
+                    padding-left: 0;
+                    &__company {
+                        .renform {
+                            flex-direction: column;
+                            .form-group {
+                                width: 100%;
+
+                            }
+                        }
+                    }
+                    &__book {
+                        .select-box {
+                            .items {
+                                max-width: 245px;
+                            }
+                        }
+                        &--item {
+                            .renform {
+                                flex-direction: column;
+                                &:last-child {
+                                    .form-group {
+                                        input {
+                                            width: var(--inputWidth);
+                                        }
+                                    }
+                                }
+                                .form-group {
+                                    width: 100%;
+                                    label {
+                                        &.note , &.none {
+                                            display: none;
+                                        }
+                                    }
+                                    svg {
+                                        position: initial;
+                                        margin-left: 50%;
+                                        transform: rotate(90deg) translateY(50%);
+                                        margin-top: 15px;
+                                        margin-bottom: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+#header_about {
+    .menu {
+        .container {
+            .menu-list {
+                border-bottom: none;
+            }
+        }
+    }
+}
+.aboutpage {
+    .about {
+       background: url('/img/X-black.png');
+       background-color: #272727;
+       background-repeat: no-repeat;
+       background-size: contain;
+       background-position: 85% 0%;
+       padding-bottom: 70px;
+        .container {
+            .about__start {
+                padding: calc(100px - var(--pd)) 0 ;
+                .box-welcom {
+                    align-items: flex-start;
+                    margin: inherit;
+                    max-width: 880px;
+                    &::after {
+                        display: none;
+                    }
+                    h2 {
+                        line-height: 58px;
+                        background: transparent;
+                        color: $main-cl;
+                        font-size: 36px;
+                        white-space: pre-wrap;
+                        letter-spacing: 10px;
+                    }
+                    p {
+                        font-family: Pl;
+                        font-size: 18px;
+                        color: #e4e4e4;
+                        text-align: inherit;
+                        line-height: 40px;
+                    }
+                }
+            }
+            .about__book {
+                display: flex;
+                .big_btn {
+                    background-color: $main-cl;
+                    span {
+                        color: $text-cl;
+                        color: 27px;
+                    }
+                }
+                p {
+                    color: #e4e4e4;
+                    font-family: Pr;
+                    font-size: 14px;
+                    max-width: 105px;
+                    margin-left: 15px;
+                }
+            }
+        }
+        @media(max-width: 767px) {
+            .container {
+                .about__start {
+                    padding: inherit ;
+                    .box-welcom {
+                        h2 {
+                            font-size: 28px;
+                            margin-left: -15px;
+                        }
+                        p {
+                            display: block;
+                            font-size: 16px;
+                            line-height: 34px;
+                        }
+                    }
+                }
+                .about__book {
+                    margin-top: 50px;
+                }
+            }
+        }
+        @media (max-width: 575px) {
+            background: url('/img/X-gray.png');
+            background-color: #171819;
+            background-repeat: no-repeat;
+            background-size: 600px 60%;
+            background-position-x: 50%;
+            background-position-y: 100%;
+        }
+    }
+}

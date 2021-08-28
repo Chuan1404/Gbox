@@ -1,0 +1,43 @@
+// css navigator (Menu)
+nav {
+    width: 100vw;
+    height: calc(100vh - var(--heightHeader));
+    position: fixed;
+    top: var(--heightHeader);
+    background-color: $main-bg-cl;
+    z-index: 99;
+    display:none;
+    transform: translateX(-100%);
+    transition: $t;
+    ul {
+        width: 100%;
+        li {
+            width: 100%;
+            a {
+                width: 100%;
+                color: white;
+                text-decoration: none;
+                font-family: Ps;
+                font-size: 20px;
+                text-transform: uppercase;
+                display: block;
+                padding: 15px 0;
+                text-align: center;
+
+                &:hover {
+                    background-color: darkgrey;
+                    color: $text-cl;
+                
+                }
+            }
+        }
+    }
+    @media (max-width: 992px) {
+        --heightHeader: 60px;
+        @include fcenter;
+        &.active {
+            transform: translateX(0%);
+        transition: $t;
+        }
+    }
+}

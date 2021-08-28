@@ -1,0 +1,1 @@
+bgMenu(document.querySelector('.gbox-start'))

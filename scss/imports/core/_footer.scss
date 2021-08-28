@@ -1,0 +1,119 @@
+// css footer
+footer {
+    .container {
+        .info {
+            padding-bottom: 10px !important;
+            &-text {
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+    .footer_input {
+        background-color: $main-cl;
+        padding-bottom: 150px;
+        .container {
+            display:flex;
+            .input-text {
+                p {
+                    color: $text-cl;
+                }
+            }
+            .input__cols {
+                width: 50%;
+                display: flex;
+                justify-content: space-between;
+                .info-text {
+                    label {
+                        text-transform: capitalize;
+                        color: $text-cl;
+                    }
+                }
+                .item {
+                    position: relative;
+                    max-width: 220px;
+                    margin: 0 5px;
+                    &:last-child {
+                        display:block;
+                    }
+                    input[type="text"] {
+                        width: 100%;
+                        height: 20px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom: 1px solid $text-cl;
+                        background: transparent;
+                        margin-top: 10px;
+                        margin-bottom: 25px;
+                        outline: none;
+                    }
+                    .input-btn {
+                        position: absolute;
+                        bottom: -20px;
+                        right: 0;
+                    }
+                    textarea {
+                          max-width: 100%;
+                          font-size: 12px;
+                          margin-top: 6px;
+                          background-attachment: local;
+                          background-image:
+                            linear-gradient(to right, $main-cl, $main-cl 10px, transparent 10px),
+                            linear-gradient(to left, $main-cl, $main-cl 10px, transparent 10px),
+                            repeating-linear-gradient(
+                              $main-cl,
+                              $main-cl 12px*2- 1px,
+                              $text-cl 12px*2
+                            );
+                        line-height: 24px;
+                        padding: 4px 10px;
+                        border-color: $text-cl;
+                        border:none;
+                        outline: none;
+                        resize: none;
+                    }
+                }
+            }
+        }
+        .footer__arrow {
+            max-width: 250px;
+            margin: 60px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            img {
+                width: 20px;
+            }
+            p {
+                letter-spacing: 0;
+                font-size: 10px;
+                white-space: nowrap;
+            }
+        }
+        
+    }
+    @media (max-width: 768px) {
+        --pd: 20px;
+        .pd {
+            padding: 30px 0 30px 0;
+        }
+        .container {
+            .info {
+                &-text {
+                    &:last-child {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .footer_input {
+            padding-bottom: 80px;
+            .container {
+                display: none;
+            }
+        }
+    }
+}

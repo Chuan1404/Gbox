@@ -1,0 +1,296 @@
+.container {
+    .stuSli {
+        position: relative;   
+        border-bottom: 1px solid $text-cl;
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+        p {
+            font-size: 12px;
+            color: $text-cl;
+            font-family: Pr;
+        }
+        &__tool {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+           .back {
+            display: flex;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            cursor: pointer;
+            svg {
+                transform: rotate(180deg);
+                margin-left: 25px;
+            }
+           }
+        }
+        &__items {
+            width: 100%;
+            height: var(--heightSlider);
+            overflow: hidden;
+            &.is-fullscreen {
+                height: 100vh;
+                z-index: 101;
+                .flickity-button {
+                    display: block;
+                }
+            }
+            .flickity-button {
+                display: none;
+            }
+           .item {
+               width: 100%;
+               height: 100%;
+               &__img {
+                   height: var(--heightSlider);
+                   position: relative;
+                   top: 50%;
+                   transform: translateY(-50%);
+                    img {
+                        min-width: 100%;
+                        min-height: 100%;
+                        @include pcenter;
+                        object-fit: cover;
+                    }
+               }
+           }
+        }
+        &__controls {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            &--item {
+                padding-top: 25px;
+                display: flex;
+                align-items: center;
+                height: max-content;
+                &.download {
+                    cursor: pointer;
+                    svg {
+                        margin-left: 10px;
+                    }
+                }
+                &.full-screen {
+                    cursor: pointer;
+                    svg {
+                        margin-left: 20px;
+                    }
+                }
+                &.info {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    p:first-child {
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .book {
+        border-bottom: 1px solid $text-cl;
+        .row {
+            p , span {
+                font-family: Pr;
+                font-size: 14px;
+                color: $text-cl;
+                margin-bottom: 25px;
+            }
+            span {
+                margin-bottom: 0;
+            }
+            strong {
+                font-weight: bold;
+            }
+            h2 {
+                font-size: 32px;
+                font-family: Peb;
+                margin-bottom: 25px;
+            }
+            .price {
+                &__box {
+                    max-width: 440px;
+                    .item {
+                        width: 100%;
+                        height: 56px;
+                        border: 1px solid $text-cl;
+                        border-bottom: 0.5px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 60px;
+                        &:last-child {
+                            border: 1px solid $text-cl;
+                        }                    
+                    }
+                }
+            }
+        }
+        .book_btn {
+            position: relative;
+            height: 150px;
+            svg {
+                width: 12px;
+                height: 15px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                animation: mymove2 1s infinite;
+                transform: translateX(-50%) rotate(90deg);
+            }
+            .big_btn {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        --heightSlider: 400px;
+        .stuSli {
+            svg {
+                width: 12px;
+                height: 12px;
+                &.flickity-button-icon {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            &__controls {
+                padding: 0px;
+                &--item {
+                    &.full-screen , &.download {
+                        svg {
+                            margin-left: 5px;
+                        }
+                    }
+                    &.btn_control {
+                        .btn {
+                            padding: 0 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        --heightSlider: 300px;
+        --pd: 20px;
+        .stuSli {
+            border: none;
+            &__tool {
+                .back {
+                    margin-bottom: 10px;
+                }
+            }
+            &__controls {
+                justify-content: initial;
+                &--item {
+                    padding-top: 20px;
+                    &.download , &.full-screen {
+                        display: none;
+                    }
+                    &.info {
+                        margin-left: 30px;
+                        align-items: flex-start;
+                    }
+                    .btn {
+                        border: none;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        &.--next {
+                            right: 20px;
+                        }
+                        &.--prev {
+                            left: 20px;
+                        }
+                        svg {
+                            width: 20px;
+                            height: 30px;
+                            fill: #e5e5e5;
+                        }
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &__items {
+                .item {
+                    &__img {
+                        transform: translateY(0%);
+                        top: 0;
+                    }
+                }
+            }
+        }
+        .book {
+            .row {
+                .price {
+                    &__text {
+                        strong {
+                            display: block;
+                        }
+                    }
+                    &__box {
+                        margin-bottom: 30px;
+                    }
+                }
+                .floorplan {
+                    &__text {
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .specs {
+                margin-top: 30px;
+            }
+        }
+    }
+    @media (max-width: 575px) {
+        --heightSlider: 175px;
+        .stuSli {
+            &__items {
+                width: 100vw;
+            }
+            &__items,&__controls {
+                margin: 0 -15px;
+            }
+            &__controls {
+                &--item {
+                    .btn {
+                        &.--next {
+                            right: 0px;
+                        }
+                        &.--prev {
+                            left: 0px;
+                        }
+                    }
+                }
+            }
+        }
+        .book {
+            padding-bottom: 60px;
+            .row {
+                .price {
+                    &__text {
+                        max-width: 240px;
+                    }
+                    &__box {
+                        .item {
+                            padding: 0 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
